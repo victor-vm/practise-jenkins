@@ -1,6 +1,7 @@
 pipeline {
   agent any
-  stages('Build') {
+  stages {
+    stage('install'){
      steps {
        sh 'sudo apt install apache2'
        
@@ -8,6 +9,13 @@ pipeline {
        
        sh 'sudo systemctl status apache2'
       }
+    }
+    stage('status'){
+     steps {
+          sh 'sudo systemctl status apache2'
+      }
+    }
+    
     }
   }
   
