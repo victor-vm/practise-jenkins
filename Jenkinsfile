@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stages {
+  stages('Build') {
      steps {
        sh 'sudo apt install apache2'
        
